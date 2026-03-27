@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#E3F2FD"
+    android:padding="24dp">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Hitung Volume Tabung"
+        android:textSize="22sp"
+        android:textStyle="bold"
+        android:textColor="#0D47A1"
+        android:layout_marginBottom="24dp"/>
+
+    <EditText
+        android:id="@+id/inputJari"
+        android:layout_width="match_parent"
+        android:layout_height="55dp"
+        android:hint="Masukkan Jari-jari"
+        android:backgroundTint="#90CAF9"
+        android:padding="12dp"/>
+
+    <EditText
+        android:id="@+id/inputTinggi"
+        android:layout_width="match_parent"
+        android:layout_height="55dp"
+        android:hint="Masukkan Tinggi"
+        android:backgroundTint="#90CAF9"
+        android:padding="12dp"
+        android:layout_marginTop="12dp"/>
+
+    <Button
+        android:id="@+id/btnHitung"
+        android:layout_width="match_parent"
+        android:layout_height="55dp"
+        android:text="Hitung"
+        android:backgroundTint="#42A5F5"
+        android:textColor="#FFFFFF"
+        android:layout_marginTop="16dp"/>
+
+    <TextView
+        android:id="@+id/txtHasil"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Hasil akan muncul di sini"
+        android:background="#BBDEFB"
+        android:padding="16dp"
+        android:layout_marginTop="20dp"
+        android:textColor="#0D47A1"/>
+
+</LinearLayout>
