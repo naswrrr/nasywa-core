@@ -11,32 +11,33 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Nasywacore">
-
+        <activity
+            android:name=".pertemuan4.PortofolioActivity"
+            android:exported="false" />
+        <activity
+            android:name=".pertemuan4.JobBoardActivity"
+            android:exported="false" />
         <activity
             android:name=".pertemuan3.LoginActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
         <activity
             android:name=".pertemuan3.WelcomeActivity"
             android:exported="false" />
-
         <activity
             android:name=".pertemuan2.TabungActivity"
             android:exported="false" />
-
         <activity
             android:name=".pertemuan2.PersegiPanjangActivity"
             android:exported="false" />
-
         <activity
             android:name=".pertemuan2.MainMenuActivity"
             android:exported="false" />
-
     </application>
 
 </manifest>

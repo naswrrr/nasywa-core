@@ -2,8 +2,15 @@
 <resources>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
-    <color name="primary_dark">#0D1B2A</color>
+
+    <color name="plant_green">#004B40</color> <color name="plant_green_light">#006D5D</color> <color name="plant_green_soft">#E6F0EF</color> <color name="primary_dark">#0B0D17</color>
+    <color name="secondary_dark">#1C2031</color>
+
+    <color name="accent_gold">#FFD700</color>
     <color name="accent_blue">#3A86FF</color>
+    <color name="text_grey">#757575</color> <color name="text_light_grey">#B0B0B0</color>
     <color name="soft_grey">#F8F9FA</color>
-    <color name="text_grey">#757575</color>
+    <color name="border_grey">#E0E0E0</color> <color name="error_red">#E63946</color>
+    <color name="success_green">#2A9D8F</color>
+    <color name="overlay_dark">#99000000</color>
 </resources>
