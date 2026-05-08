@@ -1,16 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="black">#FF000000</color>
-    <color name="white">#FFFFFFFF</color>
-
-    <color name="plant_green">#004B40</color> <color name="plant_green_light">#006D5D</color> <color name="plant_green_soft">#E6F0EF</color> <color name="primary_dark">#0B0D17</color>
-    <color name="secondary_dark">#1C2031</color>
-
-    <color name="accent_gold">#FFD700</color>
-    <color name="accent_blue">#3A86FF</color>
-    <color name="text_grey">#757575</color> <color name="text_light_grey">#B0B0B0</color>
-    <color name="soft_grey">#F8F9FA</color>
-    <color name="border_grey">#E0E0E0</color> <color name="error_red">#E63946</color>
-    <color name="success_green">#2A9D8F</color>
-    <color name="overlay_dark">#99000000</color>
+    <color name="blue_dark">#005582</color>
+    <color name="blue_light">#D7F2FF</color>
+    <color name="accent_color">#0077B6</color>
+    <color name="bg_light">#F8F9FA</color>
+    <color name="white">#FFFFFF</color>
+    <color name="black">#000000</color>
+    <color name="gray">#808080</color>
+    <color name="success">#28A745</color>
+    <color name="error">#DC3545</color>
 </resources>

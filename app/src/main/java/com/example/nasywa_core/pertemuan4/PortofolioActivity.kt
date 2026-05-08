@@ -1,7 +1,10 @@
 package com.example.nasywa_core.pertemuan4
 
 import android.os.Bundle
+import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.view.ViewCompat
+import androidx.core.view.WindowInsetsCompat
 import com.example.nasywa_core.databinding.ActivityPortofolioBinding
 
 class PortofolioActivity : AppCompatActivity() {
@@ -10,19 +13,31 @@ class PortofolioActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        enableEdgeToEdge() // Tambahkan ini agar mendukung status bar transparan
 
-        // Inisialisasi View Binding
         binding = ActivityPortofolioBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        // 1. Menangkap data yang dikirim dari WelcomeActivity via Intent
-        // Nama "EXTRA_JUDUL" dan "EXTRA_DESC" harus sama persis dengan yang ada di WelcomeActivity
-        val judulHalaman = intent.getStringExtra("EXTRA_JUDUL")
-        val deskripsiHalaman = intent.getStringExtra("EXTRA_DESC")
+        // 1. Setup Tombol Back (ivBack)
+        binding.ivBack.setOnClickListener {
+            onBackPressedDispatcher.onBackPressed()
+        }
 
-        // 2. Menampilkan data ke TextView di XML
-        // Kita gunakan binding.idTextView untuk set teksnya
-        binding.tvJudulPortfolio.text = judulHalaman
-        binding.tvDeskripsiPortfolio.text = deskripsiHalaman
+        // 2. Padding agar Toolbar di bawah Status Bar
+        ViewCompat.setOnApplyWindowInsetsListener(binding.toolbar) { v, insets ->
+            val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
+            v.setPadding(systemBars.left, systemBars.top, systemBars.right, 0)
+            insets
+        }
+
+        // 3. Menangkap data dari Intent (Logika aslimu)
+        val judulHalaman = intent.getStringExtra("EXTRA_JUDUL") ?: "Judul Kosong"
+        val deskripsiHalaman = intent.getStringExtra("EXTRA_DESC") ?: "Deskripsi tidak tersedia"
+
+        // 4. Menampilkan ke layar
+        binding.apply {
+            tvJudulPortofolio.text = judulHalaman
+            tvDeskripsiPortofolio.text = deskripsiHalaman
+        }
     }
 }

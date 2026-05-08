@@ -1,54 +1,109 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:background="#E3F2FD"
-    android:padding="24dp">
+    android:background="@color/bg_light">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Hitung Persegi Panjang"
-        android:textSize="22sp"
-        android:textStyle="bold"
-        android:textColor="#0D47A1"
-        android:layout_marginBottom="24dp"/>
-
-    <EditText
-        android:id="@+id/inputPanjang"
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
         android:layout_width="match_parent"
-        android:layout_height="55dp"
-        android:hint="Masukkan Panjang"
-        android:backgroundTint="#90CAF9"
-        android:padding="12dp"/>
+        android:layout_height="?attr/actionBarSize"
+        android:background="@color/blue_dark"
+        app:contentInsetStart="0dp">
 
-    <EditText
-        android:id="@+id/inputLebar"
-        android:layout_width="match_parent"
-        android:layout_height="55dp"
-        android:hint="Masukkan Lebar"
-        android:backgroundTint="#90CAF9"
-        android:padding="12dp"
-        android:layout_marginTop="12dp"/>
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
 
-    <Button
-        android:id="@+id/btnHitung"
-        android:layout_width="match_parent"
-        android:layout_height="55dp"
-        android:text="Hitung"
-        android:backgroundTint="#64B5F6"
-        android:textColor="#FFFFFF"
-        android:layout_marginTop="16dp"/>
+            <ImageView
+                android:id="@+id/ivBack"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_marginStart="12dp"
+                android:padding="8dp"
+                android:src="@drawable/arrow_back"
+                app:tint="@android:color/white"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
 
-    <TextView
-        android:id="@+id/txtHasil"
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Persegi Panjang"
+                android:textColor="@android:color/white"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.appcompat.widget.Toolbar>
+
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Hasil akan muncul di sini"
-        android:background="#BBDEFB"
-        android:padding="16dp"
-        android:layout_marginTop="20dp"
-        android:textColor="#0D47A1"/>
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:padding="24dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Hitung Luas"
+            android:textSize="22sp"
+            android:textStyle="bold"
+            android:textColor="@color/blue_dark"
+            android:layout_marginBottom="24dp"
+            android:fontFamily="@font/playfairdisplay_variablefont_wght"/>
+
+        <EditText
+            android:id="@+id/inputPanjang"
+            android:layout_width="match_parent"
+            android:layout_height="55dp"
+            android:hint="Masukkan Panjang"
+            android:inputType="numberDecimal"
+            android:backgroundTint="@color/blue_dark"
+            android:padding="12dp"
+            android:textColorHint="@color/gray"
+            android:textColor="@color/black"/>
+
+        <EditText
+            android:id="@+id/inputLebar"
+            android:layout_width="match_parent"
+            android:layout_height="55dp"
+            android:hint="Masukkan Lebar"
+            android:inputType="numberDecimal"
+            android:backgroundTint="@color/blue_dark"
+            android:padding="12dp"
+            android:layout_marginTop="12dp"
+            android:textColorHint="@color/gray"
+            android:textColor="@color/black"/>
+
+        <Button
+            android:id="@+id/btnHitung"
+            android:layout_width="match_parent"
+            android:layout_height="55dp"
+            android:text="Hitung"
+            android:backgroundTint="@color/blue_dark"
+            android:textColor="@color/white"
+            android:layout_marginTop="24dp"
+            app:cornerRadius="8dp" />
+
+        <TextView
+            android:id="@+id/txtHasil"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Hasil akan muncul di sini"
+            android:background="@color/blue_light"
+            android:padding="16dp"
+            android:layout_marginTop="32dp"
+            android:textAlignment="center"
+            android:textStyle="bold"
+            android:textColor="@color/blue_dark"/>
+    </LinearLayout>
 
 </LinearLayout>
