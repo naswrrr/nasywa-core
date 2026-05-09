@@ -28,8 +28,6 @@ class WebViewActivity : AppCompatActivity() {
             setDisplayHomeAsUpEnabled(true)
         }
 
-        // --- HAPUS BAGIAN PADDING (ViewCompat) YANG LAMA ---
-
         // 2. Konfigurasi WebView sisanya tetap sama...
         binding.webView.apply {
             webViewClient = WebViewClient()
