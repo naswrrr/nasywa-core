@@ -4,6 +4,7 @@ import android.os.Bundle
 import android.widget.*
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
+import androidx.appcompat.widget.Toolbar
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import com.example.nasywa_core.R
@@ -15,21 +16,16 @@ class PersegiPanjangActivity : AppCompatActivity() {
         enableEdgeToEdge()
         setContentView(R.layout.activity_persegi_panjang)
 
-        // 1. Setup Toolbar & Tombol Back Manual
-        val ivBack = findViewById<ImageView>(R.id.ivBack)
-        ivBack.setOnClickListener {
-            onBackPressedDispatcher.onBackPressed() // Kembali ke MainMenuActivity
+        // 1. SETUP TOOLBAR OTOMATIS
+        val toolbar = findViewById<Toolbar>(R.id.toolbar)
+        setSupportActionBar(toolbar)
+
+        supportActionBar?.apply {
+            title = "Persegi Panjang" // Judul halaman
+            setDisplayHomeAsUpEnabled(true) // Tombol back otomatis
         }
 
-        // 2. Padding agar Toolbar tidak tertutup Status Bar
-        val toolbar = findViewById<androidx.appcompat.widget.Toolbar>(R.id.toolbar)
-        ViewCompat.setOnApplyWindowInsetsListener(toolbar) { v, insets ->
-            val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
-            v.setPadding(systemBars.left, systemBars.top, systemBars.right, 0)
-            insets
-        }
-
-        // 3. Inisialisasi Komponen Kalkulator
+        // 3. Inisialisasi Komponen
         val inputPanjang = findViewById<EditText>(R.id.inputPanjang)
         val inputLebar = findViewById<EditText>(R.id.inputLebar)
         val hasil = findViewById<TextView>(R.id.txtHasil)
@@ -37,16 +33,26 @@ class PersegiPanjangActivity : AppCompatActivity() {
 
         // 4. Logika Perhitungan
         btnHitung.setOnClickListener {
-            val p = inputPanjang.text.toString().toDoubleOrNull()
-            val l = inputLebar.text.toString().toDoubleOrNull()
+            val pString = inputPanjang.text.toString()
+            val lString = inputLebar.text.toString()
 
-            if (p == null || l == null) {
-                hasil.text = "Input tidak valid!"
+            if (pString.isEmpty() || lString.isEmpty()) {
+                Toast.makeText(this, "Input tidak boleh kosong!", Toast.LENGTH_SHORT).show()
                 return@setOnClickListener
             }
 
+            val p = pString.toDouble()
+            val l = lString.toDouble()
             val luas = p * l
+
             hasil.text = "Luas = $luas"
         }
+    }
+
+    // 5. FUNGSI WAJIB: Agar tombol back di toolbar berfungsi
+    override fun onSupportNavigateUp(): Boolean {
+        onSupportNavigateUp()
+        onBackPressedDispatcher.onBackPressed()
+        return true
     }
 }

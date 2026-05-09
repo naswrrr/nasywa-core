@@ -14,27 +14,28 @@ class JobBoardActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
+
         binding = ActivityJobBoardBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        // 1. Setup Tombol Back (ivBack)
-        binding.ivBack.setOnClickListener {
-            onBackPressedDispatcher.onBackPressed()
+        // 1. SETUP TOOLBAR
+        setSupportActionBar(binding.toolbar)
+        supportActionBar?.apply {
+            title = "Info Karir"
+            setDisplayHomeAsUpEnabled(true)
         }
 
-        // 2. Padding Toolbar agar tidak tertutup Status Bar
-        ViewCompat.setOnApplyWindowInsetsListener(binding.toolbar) { v, insets ->
-            val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
-            v.setPadding(systemBars.left, systemBars.top, systemBars.right, 0)
-            insets
-        }
+        // 3. Menerima Intent (Sesuai tugas dari Dosen)
+        val judul = intent.getStringExtra("EXTRA_JUDUL") ?: "Default Judul"
+        val deskripsi = intent.getStringExtra("EXTRA_DESC") ?: "Default Deskripsi"
 
-        // 3. Mengambil data dari Intent (Logika aslimu)
-        val judul = intent.getStringExtra("EXTRA_JUDUL") ?: "Info Bina Desa"
-        val deskripsi = intent.getStringExtra("EXTRA_DESC") ?: "Portal Informasi Layanan Desa"
-
-        // 4. Menampilkan ke layar (Logika aslimu)
+        // 4. Update UI dengan data dari Intent
         binding.tvJudulJob.text = judul
         binding.tvDeskripsiJob.text = deskripsi
+    }
+
+    override fun onSupportNavigateUp(): Boolean {
+        onBackPressedDispatcher.onBackPressed()
+        return true
     }
 }

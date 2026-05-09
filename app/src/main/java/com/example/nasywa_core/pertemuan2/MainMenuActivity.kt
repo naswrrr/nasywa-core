@@ -3,8 +3,8 @@ package com.example.nasywa_core.pertemuan2
 import android.content.Intent
 import android.os.Bundle
 import android.widget.Button
-import android.widget.ImageView
 import androidx.appcompat.app.AppCompatActivity
+import androidx.appcompat.widget.Toolbar // Tambahkan import ini
 import com.example.nasywa_core.R
 
 class MainMenuActivity : AppCompatActivity() {
@@ -13,13 +13,17 @@ class MainMenuActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main_menu)
 
-        // 1. Setup Toolbar & Back Button (Custom ala Lab)
-        val ivBack = findViewById<ImageView>(R.id.ivBack)
-        ivBack.setOnClickListener {
-            onBackPressedDispatcher.onBackPressed() // Kembali ke WelcomeActivity
+        // 1. SETUP TOOLBAR OTOMATIS
+        val toolbar = findViewById<Toolbar>(R.id.toolbar)
+        setSupportActionBar(toolbar)
+
+        // Aktifkan judul dan tombol back bawaan
+        supportActionBar?.apply {
+            title = "Kalkulator Bangun"
+            setDisplayHomeAsUpEnabled(true) // Ini otomatis memunculkan tombol back
         }
 
-        // 2. Button yang sudah ada di kodemu (TIDAK BERUBAH)
+        // 2. Button navigasi tetap sama
         val btnPersegi = findViewById<Button>(R.id.btnPersegi)
         val btnTabung = findViewById<Button>(R.id.btnTabung)
 
@@ -30,5 +34,11 @@ class MainMenuActivity : AppCompatActivity() {
         btnTabung.setOnClickListener {
             startActivity(Intent(this, TabungActivity::class.java))
         }
+    }
+
+    // 3. FUNGSI WAJIB: Agar tombol back di pojok kiri atas berfungsi
+    override fun onSupportNavigateUp(): Boolean {
+        onBackPressedDispatcher.onBackPressed()
+        return true
     }
 }

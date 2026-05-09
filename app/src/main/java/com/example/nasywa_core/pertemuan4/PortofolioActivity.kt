@@ -13,24 +13,19 @@ class PortofolioActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        enableEdgeToEdge() // Tambahkan ini agar mendukung status bar transparan
+        enableEdgeToEdge()
 
         binding = ActivityPortofolioBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        // 1. Setup Tombol Back (ivBack)
-        binding.ivBack.setOnClickListener {
-            onBackPressedDispatcher.onBackPressed()
+        // 1. SETUP TOOLBAR OTOMATIS
+        setSupportActionBar(binding.toolbar)
+        supportActionBar?.apply {
+            title = "Portfolio Bina Desa" // Set judul halaman
+            setDisplayHomeAsUpEnabled(true) // Munculkan tombol back bawaan
         }
 
-        // 2. Padding agar Toolbar di bawah Status Bar
-        ViewCompat.setOnApplyWindowInsetsListener(binding.toolbar) { v, insets ->
-            val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
-            v.setPadding(systemBars.left, systemBars.top, systemBars.right, 0)
-            insets
-        }
-
-        // 3. Menangkap data dari Intent (Logika aslimu)
+        // 3. Menangkap data dari Intent
         val judulHalaman = intent.getStringExtra("EXTRA_JUDUL") ?: "Judul Kosong"
         val deskripsiHalaman = intent.getStringExtra("EXTRA_DESC") ?: "Deskripsi tidak tersedia"
 
@@ -39,5 +34,11 @@ class PortofolioActivity : AppCompatActivity() {
             tvJudulPortofolio.text = judulHalaman
             tvDeskripsiPortofolio.text = deskripsiHalaman
         }
+    }
+
+    // 5. WAJIB: Agar tombol back di toolbar berfungsi kembali ke halaman sebelumnya
+    override fun onSupportNavigateUp(): Boolean {
+        onBackPressedDispatcher.onBackPressed()
+        return true
     }
 }
