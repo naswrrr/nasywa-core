@@ -12,7 +12,7 @@
         android:id="@+id/headerBg"
         android:layout_width="0dp"
         android:layout_height="180dp"
-        android:background="#104E70"
+        android:background="#F0F4F8"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -21,7 +21,8 @@
         android:id="@+id/toolbarAbout"
         android:layout_width="match_parent"
         android:layout_height="?attr/actionBarSize"
-        app:title="Tentang Program"
+        android:background="#104E70"
+        android:elevation="4dp"
         app:titleTextColor="@color/white"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
@@ -43,11 +44,11 @@
 
             <com.google.android.material.card.MaterialCardView
                 android:id="@+id/cardDefinition"
-                android:layout_width="0dp"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 app:cardCornerRadius="16dp"
                 app:cardElevation="4dp"
-                android:backgroundTint="@color/blue_light"
+                app:cardBackgroundColor="@color/blue_light"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent">
@@ -110,7 +111,7 @@
                 app:layout_constraintTop_toBottomOf="@id/cardDefinition" />
 
             <GridLayout
-                android:layout_width="0dp"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="8dp"
                 android:alignmentMode="alignMargins"
@@ -125,7 +126,7 @@
                     android:layout_columnWeight="1"
                     android:layout_margin="6dp"
                     app:cardCornerRadius="14dp"
-                    android:backgroundTint="@color/blue_light"
+                    app:cardBackgroundColor="@color/blue_light"
                     app:cardElevation="2dp">
                     <LinearLayout
                         android:layout_width="match_parent"
@@ -144,7 +145,7 @@
                     android:layout_columnWeight="1"
                     android:layout_margin="6dp"
                     app:cardCornerRadius="14dp"
-                    android:backgroundTint="@color/blue_light"
+                    app:cardBackgroundColor="@color/blue_light"
                     app:cardElevation="2dp">
                     <LinearLayout
                         android:layout_width="match_parent"
@@ -163,7 +164,7 @@
                     android:layout_columnWeight="1"
                     android:layout_margin="6dp"
                     app:cardCornerRadius="14dp"
-                    android:backgroundTint="@color/blue_light"
+                    app:cardBackgroundColor="@color/blue_light"
                     app:cardElevation="2dp">
                     <LinearLayout
                         android:layout_width="match_parent"
@@ -182,7 +183,7 @@
                     android:layout_columnWeight="1"
                     android:layout_margin="6dp"
                     app:cardCornerRadius="14dp"
-                    android:backgroundTint="@color/blue_light"
+                    app:cardBackgroundColor="@color/blue_light"
                     app:cardElevation="2dp">
                     <LinearLayout
                         android:layout_width="match_parent"
