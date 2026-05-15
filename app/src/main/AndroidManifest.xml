@@ -16,13 +16,16 @@
         android:theme="@style/Theme.Nasywacore"
         android:usesCleartextTraffic="true">
         <activity
-            android:name=".SplashScreenActivity"
+            android:name=".pertemuan3.RegisterActivity"
+            android:exported="false" />
+        <activity
+            android:name=".BaseActivity"
             android:exported="false" />
         <activity
             android:name=".WebViewActivity"
             android:exported="false" />
         <activity
-            android:name=".BaseActivity"
+            android:name=".SplashScreenActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

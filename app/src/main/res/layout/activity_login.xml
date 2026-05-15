@@ -21,7 +21,6 @@
             android:src="@drawable/logo_binadesa" />
 
         <TextView
-            android:id="@+id/tvTitle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
@@ -31,7 +30,6 @@
             android:textStyle="bold" />
 
         <TextView
-            android:id="@+id/tvDesc"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginBottom="40dp"
@@ -43,10 +41,7 @@
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Username"
-            app:boxStrokeColor="@color/blue_dark"
-            app:hintTextColor="@color/blue_dark">
-
+            android:hint="Username">
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/etUsername"
                 android:layout_width="match_parent"
@@ -59,10 +54,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
             android:hint="Password"
-            app:boxStrokeColor="@color/blue_dark"
-            app:hintTextColor="@color/blue_dark"
             app:passwordToggleEnabled="true">
-
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/etPassword"
                 android:layout_width="match_parent"
@@ -76,10 +68,16 @@
             android:layout_height="55dp"
             android:layout_marginTop="30dp"
             android:backgroundTint="@color/blue_dark"
-            android:text="Login"
-            android:textAllCaps="false"
-            android:textColor="@color/white"
-            app:cornerRadius="12dp" />
+            android:text="Login" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnToRegister"
+            style="@style/Widget.MaterialComponents.Button.TextButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:textColor="@color/blue_dark"
+            android:text="Register With Gmail" />
 
     </LinearLayout>
 </ScrollView>

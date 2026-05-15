@@ -34,7 +34,7 @@ class SplashScreenActivity : AppCompatActivity() {
 
             if (isLogin) {
                 // Jika sudah login, langsung ke WelcomeActivity (Main kamu)
-                val intent = Intent(this@SplashScreenActivity, WelcomeActivity::class.java)
+                val intent = Intent(this@SplashScreenActivity, BaseActivity::class.java)
                 startActivity(intent)
             } else {
                 // Jika belum login, arahkan ke LoginActivity (P3)
